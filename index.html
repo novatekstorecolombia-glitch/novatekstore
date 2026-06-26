@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVATEKSTORE | Lleva tu Setup al Siguiente Nivel</title>
+    <!-- Enlace a los estilos CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- 1. ENCABEZADO (HEADER) -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/img/logo-empresa.png" alt="NOVATEKSTORE Logo">
+                </a>
+            </div>
+            <!-- Navegación -->
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="#categorias">Categorías</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <!-- Iconos de Interacción -->
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar gadgets, hardware...">
+                </div>
+                <a href="#cuenta" class="icon-link"><i class="fas fa-user"></i></a>
+                <a href="#carrito" class="icon-link cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. SECCIÓN PRINCIPAL (HERO BANNER) -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Lleva tu Setup al <span class="highlight">Siguiente Nivel</span></h1>
+                    <p>Componentes de alta gama, periféricos premium y la tecnología que necesitas para dominar la partida.</p>
+                    <a href="#productos" class="btn-primary">EXPLORAR TIENDA</a>
+                </div>
+                <div class="hero-image">
+                    <!-- Aquí irá un render flotante de algún producto top -->
+                    <img src="assets/img/ventilador.png" alt="Producto Destacado NOVATEK">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CATEGORÍAS DESTACADAS -->
+        <section id="categorias" class="categories-section">
+            <h2 class="section-title">Explora por <span class="highlight">Categorías</span></h2>
+            <div class="categories-grid">
+                <!-- Tarjeta 1 -->
+                <div class="category-card">
+                    <h3>Hardware</h3>
+                    <a href="#" class="btn-text">Ver más →</a>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="category-card">
+                    <h3>Zona Gaming</h3>
+                    <a href="#" class="btn-text">Ver más →</a>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="category-card">
+                    <h3>Gadgets</h3>
+                    <a href="#" class="btn-text">Ver más →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. VITRINA DE PRODUCTOS (MÁS VENDIDOS) -->
+        <section id="productos" class="products-section">
+            <h2 class="section-title">Los Más <span class="highlight">Buscados</span></h2>
+            <div class="products-grid">
+                <!-- Plantilla de Producto Individual (Se repetirá mediante JS o backend) -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="assets/img/producto-ejemplo.jpg" alt="Nombre del Producto">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">Nuevo</span>
+                        <h3>Teclado Mecánico RGB Pro</h3>
+                        <p class="price">$149.900</p>
+                        <button class="btn-add-cart">Añadir al Carrito</button>
+                    </div>
+                </div>
+                <!-- Fin Plantilla Producto -->
+            </div>
+        </section>
+
+        <!-- 5. VALORES DE MARCA (CONFIANZA) -->
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-item">
+                    <i class="fas fa-rocket feature-icon"></i>
+                    <h3>Envíos Veloces</h3>
+                    <p>Entregas a la velocidad de nuestro cohete.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Garantía Absoluta</h3>
+                    <p>Productos 100% originales con soporte local.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-credit-card feature-icon"></i>
+                    <h3>Pago Seguro</h3>
+                    <p>Múltiples métodos de pago con total confianza.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 6. PIE DE PÁGINA (FOOTER) -->
+   <footer id="contacto" class="main-footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="assets/img/logo-empresa.png" alt="NOVATEKSTORE Logo">
+            <p>Únete a la tripulación y no te pierdas ninguna oferta espacial.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Soporte</h4>
+            <ul>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico">
+                <button type="submit">Unirse</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Barra inferior con Derechos y Redes unificada -->
+    <div class="footer-bottom">
+        <div class="footer-bottom-container">
+            <p>&copy; 2026 Novatekstore. Todos los derechos reservados.</p>
+            <div class="redes-sociales">
+                <!-- REEMPLAZA LOS '#' CON EL LINK REAL DE TUS PÁGINAS -->
+                <a href="https://www.facebook.com/profile.php?id=61589722169859&locale=es_LA" target="_blank" class="icono-red facebook" title="Síguenos en Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/novatekstorec?igsh=MXBuN2ViZnM5OXVycw==" target="_blank" class="icono-red instagram" title="Síguenos en Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Enlace a los scripts de Javascript -->
+    <script src="js/main.js"></script>
+
+<!-- ==========================================================================
+       7. FORMULARIO EMERGENTE DE PAGO CONTRA ENTREGA (CON DESCRIPCIÓN)
+       ========================================================================== -->
+    <div id="modal-overlay" class="cart-overlay"></div>
+    <div id="order-modal" class="side-cart">
+        <div class="cart-header">
+            <h2>Confirmar tu Pedido 🚛</h2>
+            <button id="close-form-btn" class="close-cart">&times;</button>
+        </div>
+        
+        <div class="cart-body">
+            <!-- Tarjeta de Resumen del Producto y Descripción Técnica -->
+            <div style="background: #0a0a0a; padding: 1.2rem; border-radius: 6px; margin-bottom: 1.5rem; border: 1px solid #222;">
+                <h4 id="modal-product-title" style="color: #fff; margin-bottom: 0.3rem; font-size: 1.2rem; text-transform: uppercase;">Producto</h4>
+                <p id="modal-product-price" style="color: var(--brand-yellow); font-weight: bold; font-size: 1.4rem; margin-bottom: 0.8rem;">$0</p>
+                
+                <!-- Aquí se inyecta la descripción desde el JavaScript -->
+                <p id="modal-product-description" style="color: #b3b3b3; font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.8rem; border-top: 1px solid #1a1a1a; padding-top: 0.8rem; font-style: italic;"></p>
+                
+                <small style="color: #ffd700; display: block; font-weight: 600;">💵 Pagas en efectivo en casa cuando el mensajero te entregue.</small>
+            </div>
+
+            <!-- Formulario de Datos de Envío -->
+            <form id="quick-order-form" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <label style="display:block; margin-bottom:0.4rem; font-size:0.9rem; color:#aaa;">Nombre Completo</label>
+                    <input type="text" id="form-nombre" required placeholder="Ej: Juan Pérez" style="width:100%; background:#1a1a1a; border:1px solid #333; padding:0.75rem; color:#fff; border-radius:4px; outline:none;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:0.4rem; font-size:0.9rem; color:#aaa;">Correo Electrónico</label>
+                    <input type="email" id="form-correo" required placeholder="ejemplo@correo.com" style="width:100%; background:#1a1a1a; border:1px solid #333; padding:0.75rem; color:#fff; border-radius:4px; outline:none;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:0.4rem; font-size:0.9rem; color:#aaa;">Número de Celular</label>
+                    <input type="tel" id="form-telefono" required placeholder="Ej: 300 123 4567" style="width:100%; background:#1a1a1a; border:1px solid #333; padding:0.75rem; color:#fff; border-radius:4px; outline:none;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:0.4rem; font-size:0.9rem; color:#aaa;">Dirección Completa (Casa, Apto, Barrio)</label>
+                    <input type="text" id="form-direccion" required placeholder="Ej: Calle 45 #12-34 Barrio Centro" style="width:100%; background:#1a1a1a; border:1px solid #333; padding:0.75rem; color:#fff; border-radius:4px; outline:none;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:0.4rem; font-size:0.9rem; color:#aaa;">Ciudad o Municipio / Departamento</label>
+                    <input type="text" id="form-ciudad" required placeholder="Ej: Medellín, Antioquia" style="width:100%; background:#1a1a1a; border:1px solid #333; padding:0.75rem; color:#fff; border-radius:4px; outline:none;">
+                </div>
+
+                <button type="submit" class="btn-checkout" style="margin-top:1rem;">🎯 CONFIRMAR PEDIDO CONTRA ENTREGA</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Enlace a los scripts de Javascript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

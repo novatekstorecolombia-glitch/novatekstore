@@ -1,0 +1,1004 @@
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================================================== */
+:root {
+    --bg-dark: #000000;
+    --bg-card: #121212;
+    --bg-header: #0a0a0a;
+    --text-white: #ffffff;
+    --text-gray: #a0a0a0;
+    --brand-yellow: #ffd700; /* Reemplazar por el hex exacto de tu logo si varía */
+    --brand-yellow-hover: #e6c200;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.highlight {
+    color: var(--brand-yellow);
+}
+
+/* ==========================================================================
+   2. ENCABEZADO (HEADER)
+   ========================================================================== */
+.main-header {
+    background-color: var(--bg-header);
+    border-bottom: 1px solid #1a1a1a;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 50px; /* Ajusta según el formato de tu imagen */
+    object-fit: contain;
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--brand-yellow);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.search-box input {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: var(--text-white);
+    outline: none;
+    transition: var(--transition);
+}
+
+.search-box input:focus {
+    border-color: var(--brand-yellow);
+}
+
+.icon-link {
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.icon-link:hover {
+    color: var(--brand-yellow);
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--brand-yellow);
+    color: var(--bg-dark);
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   3. SECCIÓN HERO (BANNER PRINCIPAL)
+   ========================================================================== */
+.hero-section {
+    padding: 6rem 2rem;
+    background: radial-gradient(circle at 80% 20%, #1a1a00 0%, var(--bg-dark) 50%);
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--brand-yellow);
+    color: var(--bg-dark);
+    padding: 1rem 2.5rem;
+    font-weight: bold;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--brand-yellow-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+/* ==========================================================================
+   4. SECCIONES COMUNES Y COMPONENTES (PRODUCTOS / CATEGORÍAS)
+   ========================================================================== */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+}
+
+/* Categorías */
+.categories-section, .products-section, .features-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.category-card {
+    background-color: var(--bg-card);
+    border: 1px solid #222;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card:hover {
+    border-color: var(--brand-yellow);
+    transform: translateY(-5px);
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.btn-text {
+    color: var(--brand-yellow);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Vitrina de Productos */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: var(--bg-card);
+    border: 1px solid #222;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    border-color: #444;
+    transform: translateY(-5px);
+}
+
+.product-img {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-tag {
+    background-color: var(--brand-yellow);
+    color: var(--bg-dark);
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.product-info h3 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.price {
+    color: var(--brand-yellow);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.btn-add-cart {
+    width: 100%;
+    background-color: transparent;
+    color: var(--text-white);
+    border: 1px solid var(--brand-yellow);
+    padding: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-add-cart:hover {
+    background-color: var(--brand-yellow);
+    color: var(--bg-dark);
+}
+
+/* ==========================================================================
+   5. CARACTERÍSTICAS / VALORES
+   ========================================================================== */
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--brand-yellow);
+    margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.feature-item p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   6. PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+.main-footer {
+    background-color: var(--bg-header);
+    border-top: 1px solid #1a1a1a;
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand img {
+    height: 40px;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.footer-links h4, .footer-newsletter h4 {
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.footer-links a {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a:hover {
+    color: var(--brand-yellow);
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 0.75rem;
+    border-radius: 4px;
+    color: var(--text-white);
+}
+
+.newsletter-form button {
+    background-color: var(--brand-yellow);
+    color: var(--bg-dark);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 2rem;
+    color: var(--text-gray);
+    font-size: 0.8rem;
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 768px) {
+    .header-container { flex-direction: column; gap: 1rem; }
+    .nav-menu ul { gap: 1rem; }
+    .hero-container { grid-template-columns: 1fr; text-align: center; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content p { margin: 0 auto 2rem auto; }
+    .categories-grid, .features-container, .footer-container { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ==========================================================================
+   7. CARRITO LATERAL (SIDE CART)
+   ========================================================================== */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: none; /* Oculto por defecto */
+}
+
+.side-cart {
+    position: fixed;
+    top: 0;
+    right: -450px; /* Escondido a la derecha */
+    width: 100%;
+    max-width: 420px;
+    height: 100%;
+    background-color: var(--bg-card);
+    border-left: 1px solid #222;
+    z-index: 2001;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Clase que añadiremos con JS para mostrar el carrito */
+.side-cart.open {
+    right: 0;
+}
+
+.cart-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-header h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-cart:hover {
+    color: var(--brand-yellow);
+}
+
+.cart-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+}
+
+.empty-cart-msg {
+    color: var(--text-gray);
+    text-align: center;
+    margin-top: 3rem;
+    font-style: italic;
+}
+
+/* Tarjeta de producto dentro del carrito */
+.cart-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background-color: #0a0a0a;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border: 1px solid #1a1a1a;
+}
+
+.cart-item-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.cart-item-info p {
+    color: var(--brand-yellow);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #ff4d4d;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.remove-item-btn:hover {
+    text-decoration: underline;
+}
+
+/* Footer del carrito */
+.cart-footer {
+    padding: 1.5rem;
+    border-top: 1px solid #1a1a1a;
+    background-color: #0a0a0a;
+}
+
+.cart-total-box {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.cart-total-box #cart-total-price {
+    color: var(--brand-yellow);
+}
+
+.btn-checkout {
+    width: 100%;
+    background-color: var(--brand-yellow);
+    color: var(--bg-dark);
+    border: none;
+    padding: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 1px;
+}
+
+.btn-checkout:hover {
+    background-color: var(--brand-yellow-hover);
+}
+
+/* Botones de acción Dropshipping */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-order-now {
+    width: 100%;
+    background-color: var(--brand-yellow);
+    color: var(--bg-dark);
+    border: none;
+    padding: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    text-transform: uppercase;
+}
+
+.btn-order-now:hover {
+    background-color: var(--brand-yellow-hover);
+    transform: translateY(-2px);
+}
+
+.btn-wa-direct {
+    width: 100%;
+    background-color: #25D366; /* Verde Oficial de WhatsApp */
+    color: #fff;
+    text-align: center;
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    display: block;
+}
+
+.btn-wa-direct:hover {
+    background-color: #1ebd56;
+}
+
+/* Modificamos el antiguo disparador del header para que solo sea un acceso directo a soporte */
+.cart-icon .cart-count {
+    display: none; /* Quitamos el contador ya que la venta es directa e individual */
+}
+/* --- CONTENEDOR DE LA IMAGEN --- */
+.product-img {
+    width: 100%;
+    height: 250px; /* 📐 Altura fija ideal para que todas las tarjetas midan lo mismo */
+    overflow: hidden; /* Oculta lo que sobresalga de la medida */
+    background-color: #111; /* Fondo oscuro por si la imagen tiene transparencias */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- CONTENEDOR DE LA IMAGEN --- */
+.product-img {
+    width: 100%;
+    height: 280px; /* Le damos un poco más de altura vertical */
+    overflow: hidden;
+    background-color: #0d0d0d; /* Fondo gris ultra oscuro para que se fusione con la tienda */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; /* 📐 Espacio de colchón para que el producto no toque los bordes */
+    border-bottom: 1px solid #1a1a1a;
+}
+
+/* --- CONTROL DE LA FOTO DE CATALOGO --- */
+.product-img img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* 🎯 Muestra el producto COMPLETO y enfocado, sin recortes */
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto visual sutil al pasar el mouse */
+.product-card:hover .product-img img {
+    transform: scale(1.03);
+}
+
+/* --- ESTILOS PÁGINA NOSOTROS --- */
+
+/* Contenedor general para alinear el contenido */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Banner */
+.nosotros-hero {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a); /* Tonos oscuros/azules tecnológicos */
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+.nosotros-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.nosotros-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Sección Historia (Layout de dos columnas) */
+.nosotros-historia {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    flex-wrap: wrap; /* Ajuste para móviles */
+}
+.nosotros-texto {
+    flex: 1;
+    min-width: 300px;
+}
+.nosotros-texto h2 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+.nosotros-texto p {
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.nosotros-imagen {
+    flex: 1;
+    min-width: 300px;
+}
+.nosotros-imagen img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Sección Valores Grid */
+.nosotros-valores {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.nosotros-valores h2 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 30px;
+}
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.valor-tarjeta {
+    background: #f8fafc;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease;
+}
+.valor-tarjeta:hover {
+    transform: translateY(-5px);
+}
+.valor-tarjeta .icono {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.valor-tarjeta h3 {
+    font-size: 1.25rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+.valor-tarjeta p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Call To Action */
+.nosotros-cta {
+    background: #f1f5f9;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+.nosotros-cta h2 {
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+.nosotros-cta p {
+    color: #475569;
+    margin-bottom: 25px;
+}
+.btn-tienda {
+    display: inline-block;
+    background: #2563eb; /* Color azul de acción */
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.btn-tienda:hover {
+    background: #1d4ed8;
+}
+
+/* ==========================================================================
+   ESTILOS AISLADOS PARA LA PÁGINA NOSOTROS (NOVATEKSTORE)
+   ========================================================================== */
+
+/* Esto asegura que los cambios solo apliquen dentro de la página nosotros */
+.page-nosotros {
+    background-color: #ffffff;
+    color: #111111;
+    font-family: sans-serif; /* O la tipografía que uses en tu proyecto */
+}
+
+/* Hero Banner */
+.page-nosotros .nosotros-hero {
+    background: #121212; 
+    color: #ffffff;
+    text-align: center;
+    padding: 70px 20px;
+    margin-bottom: 50px;
+    border-bottom: 4px solid #ffcc00; 
+}
+.page-nosotros .nosotros-hero h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.page-nosotros .nosotros-hero p {
+    font-size: 1.2rem;
+    color: #ffcc00; 
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Sección Historia */
+.page-nosotros .nosotros-historia {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+.page-nosotros .nosotros-texto {
+    flex: 1;
+    min-width: 300px;
+}
+.page-nosotros .nosotros-texto h2 {
+    font-size: 2.2rem;
+    color: #121212; 
+    margin-bottom: 20px;
+    position: relative;
+}
+.page-nosotros .nosotros-texto h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #ffcc00;
+    margin-top: 8px;
+}
+.page-nosotros .nosotros-texto p {
+    color: #444444;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.page-nosotros .nosotros-imagen {
+    flex: 1;
+    min-width: 300px;
+}
+.page-nosotros .nosotros-imagen img {
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid #121212; 
+    box-shadow: 8px 8px 0px #ffcc00; 
+    object-fit: cover;
+}
+
+/* Sección Valores */
+.page-nosotros .nosotros-valores {
+    background-color: #121212; 
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 60px;
+    border-radius: 12px;
+}
+.page-nosotros .nosotros-valores h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+.page-nosotros .valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+.page-nosotros .valor-tarjeta {
+    background: #ffffff; 
+    color: #121212; 
+    padding: 35px 25px;
+    border-radius: 8px;
+    border-bottom: 5px solid #ffcc00; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.page-nosotros .valor-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(255, 204, 0, 0.2); 
+}
+.page-nosotros .valor-tarjeta .icono {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.page-nosotros .valor-tarjeta h3 {
+    font-size: 1.3rem;
+    color: #121212;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+.page-nosotros .valor-tarjeta p {
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Call To Action */
+.page-navotek-cta {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f9f9f9;
+    border: 2px solid #121212;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+/* Botón Novatek */
+.page-nosotros .btn-tienda {
+    display: inline-block;
+    background: #ffcc00; 
+    color: #121212; 
+    padding: 14px 35px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border: 2px solid #ffcc00;
+    transition: all 0.2s ease;
+}
+.page-nosotros .btn-tienda:hover {
+    background: #121212; 
+    color: #ffcc00; 
+    border-color: #121212;
+}
+
+/* ==========================================================================
+   ESTILOS GLOBALES DE REDES SOCIALES (PARA INDEX Y NOSOTROS)
+   ========================================================================== */
+
+/* Contenedor de la barra inferior del footer */
+.footer-bottom {
+    background-color: #121212; 
+    border-top: 1px solid #222222;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* Alinea los textos a la izquierda y las redes a la derecha */
+.footer-bottom-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-bottom-container p {
+    font-size: 0.95rem;
+    color: #aaaaaa;
+    margin: 0;
+}
+
+/* Caja de las redes */
+.redes-sociales {
+    display: flex;
+    gap: 15px;
+}
+
+/* Estilo base de los botones circulares (Funciona en cualquier página) */
+.icono-red {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #222222; /* Fondo gris oscuro */
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto Hover interactivo de Novatekstore */
+.icono-red:hover {
+    background-color: #ffcc00; /* Amarillo Novatek */
+    color: #121212; /* Icono Negro */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
+}
